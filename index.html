@@ -1,0 +1,671 @@
+<!DOCTYPE html> <!-- Declares this is an HTML5 document -->
+<html lang="en"> <!-- Sets language to English -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site responsive on mobile devices -->
+<meta charset="UTF-8"> <!-- Supports all characters (emojis, symbols, etc.) -->
+<meta name="description" content="Firewall One is a high-security, water-free data center."><!-- SEO: short description shown in Google results -->
+<meta name="keywords" content="data center, firewall one, cloud hosting, app hosting, website hosting, AI hosting, GPU hosting, GPU cloud, cloud computing, infrastructure hosting, enterprise hosting, managed hosting, dedicated servers, server hosting, high availability hosting, scalable hosting, virtual machines, VM hosting, private cloud, public cloud, hybrid cloud, cloud infrastructure, compute clusters, load balancing, auto scaling, storage hosting, cloud storage, object storage, block storage, backup services, disaster recovery, database hosting, SQL hosting, NoSQL hosting, DevOps services, CI/CD pipelines, serverless hosting, virtualization, Docker hosting, container hosting, Kubernetes, managed Kubernetes, microservices hosting, API hosting, Node.js hosting, Python hosting, Java hosting, PHP hosting, .NET hosting, web hosting, WordPress hosting, ecommerce hosting, static website hosting, secure hosting, network security, firewall protection, DDoS protection, zero trust security, infrastructure security, 24/7 monitoring, redundant systems, UPS backup, generator backup, fiber connectivity, low latency hosting, private networking, VPN access, colocation services, rack space rental, remote hands, AI infrastructure, AI compute, AI inference hosting, AI training servers, machine learning hosting, deep learning hosting, LLM hosting, AI model hosting, vector databases, embeddings, AI pipelines, edge AI, GPU servers, GPU compute, high performance computing, HPC hosting, real time data processing, streaming infrastructure, IoT hosting, gaming server hosting, rendering infrastructure, blockchain node hosting, business intelligence hosting, analytics hosting"><!-- SEO keywords for search engines (very long list for discoverability) -->
+<meta name="author" content="Creator: Jacob Zeidman"><!-- Shows who made the site -->
+<meta name="robots" content="index, follow"><!-- Allows search engines to index and rank the site -->
+<title>Firewall One</title> <!-- Title shown in browser tab -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Speeds up font loading --><!-- Google Fonts connection optimization -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Improves font performance -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&display=swap" rel="stylesheet"><!-- Loads DM Sans font from Google Fonts -->
+<link rel="stylesheet" href="styles.css"><!-- Main stylesheet -->
+<script>
+if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+  fetch('http://127.0.0.1:5000/users')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
+</head>
+<body>
+  <!--Header-->
+<header>
+  <div class="container">
+
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <nav class="navLinks">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#infrastructure">Infrastructure</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#infrastructure">Network</a></li>
+        <li><a href="#infrastructure">Security</a></li>
+        <li><a href="#solutions">Pricing</a></li>
+        <li><a href="#oncallhelp">Support</a></li>
+        <li><a href="#formsection">Contact</a></li>
+      </ul>
+    </nav>
+
+ <button class="nav-btn" onclick="toggleNav()" aria-label="Open navigation menu">
+  ☰ Menu
+</button>
+  </div>
+
+</header>
+<!--Hero-->
+<section class="hero">
+<div class="hero-content">
+  <!--CTA-->
+  <h1 id="myH1">Get your business started with Firewall One!</h1>
+<p> Schedule a consultation today and launch your business fast.</p>
+
+<a href="#Form" class="hero-btn">
+  Schedule a Consultation
+</a>
+</div>
+</section>
+
+<!--Service Section-->
+<section>
+  <div class="services-area">
+    <div class="wrapper">
+
+      <div class="section-header">
+        <h2>Solutions</h2>
+        <p>Scalable, enterprise-grade solutions for cloud, infrastructure, security, and high-availability systems.</p>
+      </div>
+
+      <div class="items">
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>App Hosting</h3>
+            <p>$20 – $60 / month</p>
+            <ul>
+              <li>Node.js / Python / Java / .NET</li>
+              <li>API hosting</li>
+              <li>Docker support</li>
+              <li>Basic scaling included</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>Website Hosting</h3>
+            <p>$10 – $35 / month</p>
+            <ul>
+              <li>Shared / VPS / Dedicated</li>
+              <li>WordPress optimized</li>
+              <li>E-commerce support</li>
+              <li>SSL + CDN ready</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>Cloud Infrastructure</h3>
+            <p>$40 – $120 / month</p>
+            <ul>
+              <li>Virtual Machines</li>
+              <li>Storage & backups</li>
+              <li>Load balancing</li>
+              <li>Private / Hybrid cloud</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>Cloud Computing & DevOps</h3>
+            <p>$60 – $180 / month</p>
+            <ul>
+              <li>Kubernetes clusters</li>
+              <li>CI/CD pipelines</li>
+              <li>Server virtualization</li>
+              <li>Auto-scaling systems</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>Database Hosting</h3>
+            <p>$30 – $100 / month</p>
+            <ul>
+              <li>MySQL & PostgreSQL</li>
+              <li>MongoDB support</li>
+              <li>Automated backups</li>
+              <li>High availability options</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>AI / GPU Services</h3>
+            <p>$150 – $600 / month</p>
+            <ul>
+              <li>AI inference hosting</li>
+              <li>Model training support</li>
+              <li>GPU cloud rental</li>
+              <li>Vector DB + embeddings</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="single-item">
+          <div class="item-box">
+            <h3>Disaster Recovery</h3>
+            <p>$50 – $200 / month</p>
+            <ul>
+              <li>Automated backups</li>
+              <li>Failover systems</li>
+              <li>Geo-redundant storage</li>
+              <li>Fast system restoration</li>
+            </ul>
+            <a href="#Form" class="quoteBtn">Get Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Form">
+  <div class="box">
+    <form action="https://formsubmit.co/firewallone718@gmail.com" method="POST">
+
+      <h2>Consultation</h2>
+
+      <!-- NAME -->
+      <div class="inputBox">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Full Name" required autocomplete="name">
+      </div>
+
+      <!-- EMAIL -->
+      <div class="inputBox">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Email Address" required autocomplete="email">
+      </div>
+
+      <!-- PHONE -->
+      <div class="inputBox">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number (optional)" autocomplete="tel">
+      </div>
+
+      <!-- COMPANY -->
+      <div class="inputBox">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Company Name (optional)" autocomplete="organization">
+      </div>
+
+      <!-- SERVICE -->
+      <div class="inputBox">
+        <label for="service">Select Service</label>
+        <select name="service" id="service" required>
+          <option value="">Select a Service</option>
+
+          <optgroup label="App Hosting">
+            <option value="app-hosting">App Hosting (Node.js / Python / PHP / Java / .NET)</option>
+            <option value="api-hosting">API Hosting</option>
+            <option value="microservices">Microservices Architecture</option>
+            <option value="containers">Containers (Docker / Kubernetes)</option>
+          </optgroup>
+
+          <optgroup label="Website Hosting">
+            <option value="web-hosting">Website Hosting (Shared / VPS / Dedicated)</option>
+            <option value="wordpress">WordPress Hosting</option>
+            <option value="ecommerce">E-commerce Hosting</option>
+            <option value="static-sites">Static Websites</option>
+          </optgroup>
+
+          <optgroup label="Cloud">
+            <option value="private-cloud">Private Cloud</option>
+            <option value="public-cloud">Public Cloud</option>
+            <option value="hybrid-cloud">Hybrid Cloud</option>
+            <option value="vms">Virtual Machines</option>
+            <option value="storage">Cloud Storage</option>
+            <option value="load-balancing">Load Balancing</option>
+            <option value="auto-scaling">Auto Scaling</option>
+          </optgroup>
+
+          <optgroup label="DevOps">
+            <option value="compute-clusters">Compute Clusters</option>
+            <option value="virtualization">Virtualization</option>
+            <option value="kubernetes">Kubernetes</option>
+            <option value="serverless">Serverless</option>
+            <option value="cicd">CI/CD Pipelines</option>
+          </optgroup>
+
+          <optgroup label="AI">
+            <option value="ai-inference">AI Inference</option>
+            <option value="ai-training">AI Training</option>
+            <option value="gpu-cloud">GPU Cloud Rental</option>
+            <option value="ai-api">AI API</option>
+            <option value="vector-db">Vector Databases</option>
+            <option value="model-hosting">Model Hosting</option>
+            <option value="fine-tuning">Fine Tuning</option>
+            <option value="embeddings">Embeddings</option>
+            <option value="ai-pipelines">AI Pipelines</option>
+            <option value="edge-ai">Edge AI</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- SCALE -->
+      <div class="inputBox">
+        <label for="scale">Estimated Scale</label>
+        <select name="scale" id="scale" required>
+          <option value="">Estimated Scale</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+
+      <!-- MESSAGE -->
+      <div class="inputBox">
+        <label for="message">Project Details</label>
+        <textarea name="message" id="message" rows="6" placeholder="Describe your workload..." required></textarea>
+      </div>
+
+      <!-- HIDDEN INPUTS (IMPORTANT) -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Consultation Request">
+      <input type="hidden" name="_template" value="table">
+
+      <!-- SUBMIT -->
+      <button type="submit">Request Consultation</button>
+
+    </form>
+  </div>
+</section>
+<!-- Infrastructure -->
+<section id="infrastructure">
+
+  <h2>Verified Data Center Infrastructure</h2>
+
+  <!-- COOLING SYSTEM EXPLANATION -->
+  <div class="sectionNote">
+
+    <h3>Controlled Cooling System</h3>
+
+    <p>
+      Our data center uses controlled air-based cooling systems, including precision AC units and high-efficiency rack-mounted fans.
+      This provides stable temperature regulation for most standard server workloads, without the use of water-based cooling systems.
+    </p>
+
+    <p>
+      High-performance and AI computing workloads generate significantly higher heat due to increased GPU density and power usage.
+      These environments require enhanced airflow management and intensified cooling control to maintain safe operating conditions and consistent performance.
+    </p>
+
+  </div>
+
+  <!-- NETWORK SECTION -->
+  <div class="sectionNote">
+
+    <h3>Network Infrastructure</h3>
+
+    <p>
+      Our network infrastructure is built for high-speed, low-latency connectivity across all systems.
+      It includes enterprise-grade routers, high-capacity fiber uplinks, and redundant switching systems to ensure uptime and stability.
+    </p>
+
+    <p>
+      Traffic is optimized through load balancing and secure routing paths, ensuring reliable performance for cloud hosting, AI workloads, and enterprise applications.
+      This allows seamless communication between servers, storage systems, and external internet connections.
+    </p>
+
+  </div>
+
+  <!-- SECURITY SECTION -->
+  <div class="sectionNote">
+
+    <h3>Security Infrastructure</h3>
+
+    <p>
+      Our data center security systems are designed to protect both physical infrastructure and digital workloads.
+      We use layered security controls to ensure only authorized access to servers, network systems, and client environments.
+    </p>
+
+    <p>
+      Physical security includes restricted access zones, monitored entry points, and controlled rack environments.
+      Digital security includes firewall protection, intrusion detection systems, and continuous threat monitoring across all network traffic.
+      We have 24-hour surveillance.
+    </p>
+
+  </div>
+
+</section>
+<!-- MAIN WRAPPER -->
+<section class="contentSplit">
+
+  <div class="videoSection">
+
+    <div class="videoCard reveal">
+      <h3>Facility Overview Video</h3>
+      <video controls>
+        <source src="YOUR-VIDEO-LINK.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="videoCard reveal">
+      <h3>CEO Jacob Zeidman</h3>
+      <video controls>
+        <source src="YOUR-VIDEO-LINK.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="about" class="about-section">
+
+  <div class="about-card">
+
+    <h2 class="glow-title">About Me</h2>
+
+    <p class="fade-in">
+      Hi, I’m Jacob Zeidman. I’m 23 years old and I’m passionate about creating solutions that help people. I’m proud to have built this website and business from the ground up. I’ve been interested in business since I was a kid, and now I’m working to turn that passion into a real career and long-term success.
+
+      I have three brothers, including a twin brother and one older brother. I am the youngest.  
+      My interests / majors are business and economics.
+
+      I also earned my CDCP (Certified Data Center Professional certificate) from  
+      <a href="https://www.epi-ap.com/services/1/3/4" target="_blank">epi-ap.com</a>.
+    </p>
+
+    <h2 class="glow-title">My Licenses</h2>
+
+    <p class="fade-in">
+      Business License, CDCP Certificate
+    </p>
+
+    <p class="fade-in subtle">
+      We may update these policies at any time to reflect infrastructure changes, security improvements, or legal requirements.
+      Continued use of our services indicates acceptance of the latest version.
+    </p>
+
+  </div>
+
+</section>
+<!-- Review Section -->
+<div class="review-box">
+
+    <div class="title">Customer Reviews</div>
+
+    <div class="rating">
+
+        <div class="big-number">4.9</div>
+
+        <div>
+            <div class="stars">
+                &#9733; &#9733; &#9733; &#9733; &#9733;
+            </div>
+
+            <div class="ratings-count">
+                1397 ratings
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="number">5</div>
+        <div class="bar"><div class="fill" style="width:93%;"></div></div>
+        <div class="percent">93%</div>
+    </div>
+
+    <div class="row">
+        <div class="number">4</div>
+        <div class="bar"><div class="fill" style="width:6%;"></div></div>
+        <div class="percent">6%</div>
+    </div>
+
+    <div class="row">
+        <div class="number">3</div>
+        <div class="bar"><div class="fill" style="width:1%;"></div></div>
+        <div class="percent">1%</div>
+    </div>
+
+    <div class="row">
+        <div class="number">2</div>
+        <div class="bar"><div class="fill" style="width:0%;"></div></div>
+        <div class="percent">0%</div>
+    </div>
+
+    <div class="row">
+        <div class="number">1</div>
+        <div class="bar"><div class="fill" style="width:0%;"></div></div>
+        <div class="percent">0%</div>
+    </div>
+
+    <!-- NAME INPUT -->
+    <input type="text" id="userName" placeholder="Full Name">
+
+    <!-- REVIEW TEXT AREA (FIXED) -->
+    <textarea id="userReview" placeholder="Write your review here..." rows="4" style="width:100%; margin-top:10px;"></textarea>
+
+    <!-- HIDDEN RATING -->
+    <input type="hidden" id="ratingValue" value="5">
+
+    <!-- SUBMIT BUTTON (UNCHANGED ID FOR EMAILJS) -->
+    <button class="review-btn" id="submitRating">
+        Submit Review
+    </button>
+
+</div>
+
+<!-- REVIEWS DISPLAY AREA -->
+<div id="reviewList" style="margin-top:20px;"></div>
+
+
+
+
+
+
+
+<!-- About Section -->
+<section id="policy">
+
+  <h2 style="font-size: 50px;">Service Commitment & Reliability Policy</h2>
+
+  <p>
+    We are committed to providing stable and reliable data center services with high uptime standards.
+  </p>
+
+  <p>
+    In the event of a power outage or service disruption lasting more than 3 consecutive days,
+    affected customers will receive a refund for the corresponding monthly service period.
+  </p>
+
+  <p>
+    We actively monitor all systems to minimize downtime and ensure consistent performance
+    across all hosted services.
+  </p>
+
+  <h3>Security & Protection</h3>
+<p>
+All systems are protected by multi-layer security including firewall filtering, intrusion detection systems, and DDoS mitigation.
+Access to infrastructure is strictly controlled and monitored 24/7.
+</p>
+
+<h3>Uptime & Service Level</h3>
+<p>
+We aim to maintain a 99.9% uptime target through continuous monitoring and proactive system maintenance.
+Scheduled maintenance is performed during low-traffic periods whenever possible.
+</p>
+
+<h3>Data Responsibility</h3>
+<p>
+Clients are responsible for maintaining their own backups unless a managed backup service is explicitly provided.
+We are not liable for data loss caused by user error, misconfiguration, or third-party services.
+</p>
+<h3>Service Transparency</h3>
+<p>
+We are committed to transparency in operations, uptime reporting, and system performance.
+Service updates and changes may be communicated to users when necessary.
+</p>
+</section>
+
+
+
+<section id="oncallhelp">
+  <h2>Phone Support</h2>
+  <p>Our dedicated support team is ready to assist you 24/7.</p>
+  <p>
+    For immediate assistance, please call us at: <strong>(000) 000 0000</strong>.
+  </p>
+  <p>
+    You can also reach out via email at <a href="mailto:firewallone758.com">firewallone758.com</a>.
+  </p>
+  <p>We provide fast, reliable support to keep your operations running smoothly.</p>
+</section>
+<!-- Footer -->
+<footer id="footer">
+
+  <div class="footerIcons">
+
+    <a href="https://www.tiktok.com" class="icon" target="_blank">
+      <span class="iconEmoji">🎵</span>
+      <span class="iconText">TikTok</span>
+    </a>
+
+    <a href="https://www.instagram.com" class="icon" target="_blank">
+      <span class="iconEmoji">📸</span>
+      <span class="iconText">Instagram</span>
+    </a>
+
+    <a href="https://www.snapchat.com" class="icon" target="_blank">
+      <span class="iconEmoji">👻</span>
+      <span class="iconText">Snapchat</span>
+    </a>
+
+    <a href="https://www.facebook.com" class="icon" target="_blank">
+      <span class="iconEmoji">📘</span>
+      <span class="iconText">Facebook</span>
+    </a>
+
+
+    <a href="#top" class="icon">
+      <span class="iconEmoji">⬆️</span>
+      <span class="iconText">Top</span>
+    </a>
+
+  </div>
+
+  <p>© 2026 Data Center Services. All rights reserved.</p>
+
+</footer>
+<script src="script.js"></script>
+<!-- EMAILJS SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("iRfxXO-79aV0Ue0kx"); // Public Key
+
+document.getElementById("submitRating").addEventListener("click", function () {
+
+  const rating = document.getElementById("ratingValue").value;
+  const name = document.getElementById("userName").value;
+
+  emailjs.send("service_w469std", "template_dipb7rm", {
+    user_name: name,
+    user_rating: rating,
+    to_email: "firewallone718@gmail.com"
+  })
+
+  .then(() => {
+    alert("Rating sent to your email!");
+  })
+
+.catch((err) => {
+  console.log("EMAILJS ERROR:", err);
+  alert(JSON.stringify(err));
+});
+});
+</script>
+<script>
+  function toggleNav() {
+    const navLinks = document.querySelector('.navLinks');
+    navLinks.classList.toggle('active');
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  emailjs.init("iRfxXO-79aV0Ue0kx");
+
+  document.getElementById("submitRating").addEventListener("click", function () {
+
+    const name = document.getElementById("userName").value;
+    const reviewText = document.getElementById("userReview").value;
+    const rating = document.getElementById("ratingValue").value;
+
+    // basic check
+    if (!name || !reviewText) {
+      alert("Please fill out name and review");
+      return;
+    }
+
+    emailjs.send("service_w469std", "template_dipb7rm", {
+      user_name: name,
+      user_rating: rating,
+      user_review: reviewText,
+      to_email: "firewallone718@gmail.com"
+    })
+
+    .then(() => {
+
+      alert("Rating sent!");
+
+      // PRINT REVIEW UNDER FORM
+      const reviewItem = document.createElement("div");
+
+      reviewItem.style.padding = "10px";
+      reviewItem.style.marginTop = "10px";
+      reviewItem.style.background = "#f5f5f5";
+      reviewItem.style.borderRadius = "8px";
+
+      reviewItem.innerHTML =
+        "<strong>" + name + "</strong><br>" +
+        reviewText;
+
+      document.getElementById("reviewList").prepend(reviewItem);
+
+      // clear form
+      document.getElementById("userName").value = "";
+      document.getElementById("userReview").value = "";
+
+    })
+
+    .catch((err) => {
+      console.log("EMAILJS ERROR:", err);
+      alert("Email failed — check console");
+    });
+
+  });
+
+});
+</script>
+</body>
+</html>
