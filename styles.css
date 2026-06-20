@@ -542,8 +542,45 @@ header {
 
 }
 
+/* PLACEHOLDERS */
+#message{
+  font-family: "DM Sans", sans-serif; /* modern font */
+
+}
+
+.payment-text{
+  color:black; /* text color */
+  font-size:18px; /* text size */
+  font-weight:600; /* professional text weight */
+  text-align:center; /* center alignment */
+  line-height:1.8; /* improve readability */
+  
+  max-width:1000px; /* wider professional layout */
+  margin:40px auto; /* balanced spacing */
+  
+  background:white; /* keeps original color */
+  padding:30px 40px; /* premium spacing inside */
+  
+  border-radius:16px; /* smoother corners */
+  border:1px solid rgba(0,0,0,.08); /* subtle professional border */
+  
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.08); /* clean modern shadow */
+  
+  letter-spacing:.3px; /* improved text appearance */
+}
 
 
+@media(max-width:768px){
+
+  .payment-text{
+    font-size:16px; /* mobile text size */
+    padding:20px; /* mobile spacing */
+    margin:25px 15px; /* mobile margins */
+    line-height:1.7; /* easier mobile reading */
+  }
+
+}
 
 
 /* ===== BASE SECTION ===== */
