@@ -574,9 +574,8 @@ header {
   font-weight:600;
   cursor:pointer;
   transition:.25s;
-  margin-top: 25px;
+  margin-top:25px;
 }
-
 #formButton:hover {
   background: #070707;
   color: rgb(255, 255, 255);
