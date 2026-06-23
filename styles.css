@@ -432,14 +432,14 @@ header {
 /*
    CONSULTATION FORM SECTION
 */
-#Form{
+#form{
   display:flex;
   justify-content:center;
   align-items:center;
   padding: 100px 20px;
 }
 
-#Form .box{
+#form .box{
   width:100%;
   max-width:900px;
   padding:50px;
@@ -451,7 +451,7 @@ header {
 }
 /* TITLE */
 
-#Form h2{
+#form h2{
   text-align:center;
   font-size:2.5rem;
   color:rgb(0, 0, 0);
@@ -460,13 +460,13 @@ header {
 
 /* INPUT GROUPS */
 
-#Form .inputBox{
+#form .inputBox{
   margin-bottom:24px;
 }
 
 /* LABELS */
 
-#Form label{
+#form label{
   display:block;
   color:#111111;
   margin-bottom:8px;
@@ -475,9 +475,9 @@ header {
 
 /* INPUTS */
 
-#Form input,
-#Form select,
-#Form textarea{
+#form input,
+#form select,
+#form textarea{
   width:100%;
   padding:16px;
   border-radius:12px;
@@ -493,9 +493,9 @@ header {
 }
 /* FOCUS */
 
-#Form input:focus,
-#Form select:focus,
-#Form textarea:focus{
+#form input:focus,
+#form select:focus,
+#form textarea:focus{
   outline:none;
 
   border-color:#2563eb;
@@ -509,7 +509,7 @@ header {
 
 /* BUTTON */
 
-#Form button{
+#form button{
   width:60%;
   padding:18px;
   border:none;
@@ -522,7 +522,7 @@ header {
   transition:.25s;
 }
 
-#Form button:hover {
+#form button:hover {
   background: #070707;
   color: rgb(255, 255, 255);
   transform: translateY(-2px);
@@ -532,11 +532,11 @@ header {
 
 @media(max-width:768px){
 
-  #Form .box{
+  #form .box{
     padding:30px;
   }
 
-  #Form h2{
+  #form h2{
     font-size:2rem;
   }
 
