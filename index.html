@@ -7,7 +7,16 @@
 <meta name="keywords" content="data center, firewall one, cloud hosting, app hosting, website hosting, AI hosting, GPU hosting, GPU cloud, cloud computing, infrastructure hosting, enterprise hosting, managed hosting, dedicated servers, server hosting, high availability hosting, scalable hosting, virtual machines, VM hosting, private cloud, public cloud, hybrid cloud, cloud infrastructure, compute clusters, load balancing, auto scaling, storage hosting, cloud storage, object storage, block storage, backup services, disaster recovery, database hosting, SQL hosting, NoSQL hosting, DevOps services, CI/CD pipelines, serverless hosting, virtualization, Docker hosting, container hosting, Kubernetes, managed Kubernetes, microservices hosting, API hosting, Node.js hosting, Python hosting, Java hosting, PHP hosting, .NET hosting, web hosting, WordPress hosting, ecommerce hosting, static website hosting, secure hosting, network security, firewall protection, DDoS protection, zero trust security, infrastructure security, 24/7 monitoring, redundant systems, UPS backup, generator backup, fiber connectivity, low latency hosting, private networking, VPN access, colocation services, rack space rental, remote hands, AI infrastructure, AI compute, AI inference hosting, AI training servers, machine learning hosting, deep learning hosting, LLM hosting, AI model hosting, vector databases, embeddings, AI pipelines, edge AI, GPU servers, GPU compute, high performance computing, HPC hosting, real time data processing, streaming infrastructure, IoT hosting, gaming server hosting, rendering infrastructure, blockchain node hosting, business intelligence hosting, analytics hosting"><!-- SEO keywords for search engines (very long list for discoverability) -->
 <meta name="author" content="Creator: Jacob Zeidman"><!-- Shows who made the site -->
 <meta name="robots" content="index, follow"><!-- Allows search engines to index and rank the site -->
-<title>Firewall One</title> <!-- Title shown in browser tab -->
+<!-- Open Graph Sharing Preview-Open Graph is for when someone shares your website link: It creates a professional preview card. -->
+<meta property="og:title" content="Firewall One">
+<meta property="og:description" content="Secure cloud hosting, app hosting, and infrastructure services.">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:type" content="website">
+  <!-- Here is where you put your real website address in. -->
+<meta property="og:url" content="https://yourwebsite.com">
+<meta property="og:description" content="Secure cloud hosting, app hosting, and infrastructure services."> <!--controls the description that appears when someone shares your website link.-->
+<title>Firewall One | Secure Cloud & Hosting Infrastructure</title> <!-- Title shown in browser tab -->
+<link rel="icon" href="images/logo.png" type="image/png">  <!--Adds the website icon that appears in the browser tab -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Speeds up font loading --><!-- Google Fonts connection optimization -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Improves font performance -->
@@ -30,7 +39,7 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
   <div class="container">
 
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+       <img src="images/logo.png" alt="Firewall One company logo" loading="lazy"> 
     </div>
 
     <nav class="navLinks">
@@ -42,11 +51,11 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
         <li><a href="#infrastructure">Security</a></li>
         <li><a href="#solutions">Pricing</a></li>
         <li><a href="#oncallhelp">Support</a></li>
-        <li><a href="#formsection">Contact</a></li>
+        <li><a href="#form">Contact</a></li>
       </ul>
     </nav>
 
- <button class="nav-btn" onclick="toggleNav()" aria-label="Open navigation menu">
+ <button type="button" class="nav-btn" onclick="toggleNav()" aria-label="Open navigation menu">
   ☰ Menu
 </button>
   </div>
@@ -65,7 +74,7 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
 </div>
 </section>
 <!-- Service Section -->
-<section>
+<section id="solutions">
   <div class="services-area">
     <div class="wrapper">
 
@@ -184,7 +193,7 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
   </div>
 </section>
 
-<section id="Form">
+<section id="form">
   <div class="box">
     <form action="https://formsubmit.co/firewallone718@gmail.com" method="POST">
 
@@ -217,7 +226,7 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
       <!-- SERVICE -->
       <div class="inputBox">
         <label for="service">Select Service</label>
-        <select name="service" id="service" required>
+        <select autocomplete="off" name="service" id="service" required>
           <option value="">Select a Service</option>
 
           <optgroup label="App Hosting">
@@ -301,8 +310,7 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
 
   Also Accepted:
   🅿️ PayPal • Apple Pay • Google Pay • 💵 Cash • 🏦 Bank Transfer • 💰 Money Orders<br>
-
-  Refund options and no fraud policy.
+Refund policies apply. Fraudulent activity, unauthorized payments, and abuse of services are strictly prohibited.
 </p>
   </div>
 </section>
@@ -371,15 +379,17 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
 
     <div class="videoCard reveal">
       <h3>Facility Overview Video</h3>
-      <video controls>
+      <video controls aria-label="Facility overview video">
         <source src="YOUR-VIDEO-LINK.mp4" type="video/mp4">
+                  Your browser does not support video playback.
       </video>
     </div>
 
     <div class="videoCard reveal">
       <h3>CEO Jacob Zeidman</h3>
-      <video controls>
+      <video controls aria-label="CEO introduction">
         <source src="YOUR-VIDEO-LINK.mp4" type="video/mp4">
+
       </video>
     </div>
 
@@ -468,17 +478,17 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
         <div class="percent">0%</div>
     </div>
 
-    <!-- NAME INPUT -->
-    <input type="text" id="userName" placeholder="Full Name">
+  <label for="userName">Full Name</label>
+<input type="text" id="userName" placeholder="Full Name">
 
-    <!-- REVIEW TEXT AREA (FIXED) -->
+   <label for="userReview">Write Review</label>
     <textarea id="userReview" placeholder="Write your review here..." rows="4" style="width:100%; margin-top:10px;"></textarea>
 
     <!-- HIDDEN RATING -->
     <input type="hidden" id="ratingValue" value="5">
 
     <!-- SUBMIT BUTTON (UNCHANGED ID FOR EMAILJS) -->
-    <button class="review-btn" id="submitRating">
+    <button type="button" class="review-btn" id="submitRating">
         Submit Review
     </button>
 
@@ -544,9 +554,9 @@ Service updates and changes may be communicated to users when necessary.
   <p>
     For immediate assistance, please call us at: <strong>(000) 000 0000</strong>.
   </p>
-  <p>
-    You can also reach out via email at <a href="mailto:firewallone758.com">firewallone758.com</a>.
-  </p>
+<a href="mailto:firewallone718@gmail.com">
+firewallone718@gmail.com
+</a>
   <p>We provide fast, reliable support to keep your operations running smoothly.</p>
 </section>
 <!-- Footer -->
@@ -622,7 +632,6 @@ document.getElementById("submitRating").addEventListener("click", function () {
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
