@@ -520,6 +520,7 @@ header {
   font-weight:600;
   cursor:pointer;
   transition:.25s;
+  margin--top: 15px;
 }
 
 #form button:hover {
