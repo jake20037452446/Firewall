@@ -784,7 +784,20 @@ header {
   }
 }
 
+/* Data Center color sustem  */
+#data-center-layout {
+  padding: 40px 20px;
+}
 
+#data-center-layout ul {
+  list-style: none;
+  padding: 0;
+}
+
+#data-center-layout li {
+  padding: 8px 0;
+  font-size: 16px;
+}
 /* MAIN WRAPPER (no heavy box) */
 .review-box {
   max-width: 900px;
