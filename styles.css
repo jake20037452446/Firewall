@@ -784,81 +784,67 @@ header {
   }
 }
 
+/*  DATA CENTER LAYOUT SECTION*/
+
 #data-center-layout {
-  background: #000; /* full black background */
-  color: #fff; /* white text */
-  padding: 60px 20px; /* spacing around section */
-  max-width: 900px; /* keeps layout centered */
-  margin: auto; /* center horizontally */
+  background: #000; /* full black theme */
+  color: #fff; /* main text color */
+  padding: 60px 20px; /* section spacing */
+  max-width: 900px; /* readable width */
+  margin: auto; /* center section */
   font-family: Arial, sans-serif; /* clean system font */
 }
 
+/* main title */
 #data-center-layout h2 {
-  font-size: 28px; /* main title size */
-  margin-bottom: 10px; /* space below title */
-  letter-spacing: 1px; /* slight tech feel */
+  font-size: 28px; /* large heading */
+  margin-bottom: 10px; /* spacing below title */
+  letter-spacing: 1px; /* tech-style spacing */
 }
 
+/* subtitle text */
 .subtitle {
-  color: #aaa; /* soft gray text */
+  color: #aaa; /* muted gray */
   margin-bottom: 25px; /* spacing under subtitle */
-  font-size: 14px; /* small description text */
+  font-size: 14px; /* smaller description text */
+  line-height: 1.4; /* readability */
 }
 
-/* container for all rows */
+/* list container */
 .layout-list {
   display: flex; /* vertical layout */
   flex-direction: column; /* stack rows */
-  gap: 12px; /* spacing between rows */
+  gap: 12px; /* space between rows */
 }
 
 /* each service row */
 .row {
   display: flex; /* horizontal layout */
   align-items: center; /* vertical centering */
-  justify-content: space-between; /* left and right separation */
-  padding: 12px 14px; /* internal spacing */
-  border: 1px solid #222; /* subtle border */
-  border-radius: 8px; /* rounded corners */
-  background: #0a0a0a; /* dark gray panel */
-}
-
-/* left side group (dot + text) */
-.main {
-  display: flex; /* align dot and label */
-  align-items: center; /* vertical align */
   gap: 12px; /* space between dot and text */
+  padding: 12px 14px; /* inner spacing */
+  border: 1px solid #222; /* subtle outline */
+  border-radius: 8px; /* rounded corners */
+  background: #0a0a0a; /* dark panel */
 }
 
-/* LED indicator base */
+/* LED dot base */
 .dot {
-  width: 10px; /* circle size */
-  height: 10px; /* circle size */
-  border-radius: 50%; /* make circle */
+  width: 10px; /* size of LED */
+  height: 10px; /* size of LED */
+  border-radius: 50%; /* circle shape */
   display: inline-block; /* inline element */
 }
 
-/* ================================
-   LED COLOR MAPPING SYSTEM
-================================ */
+/*  LED COLOR SYSTEM (RACK ZONES)*/
 
 .blue { background: #1e90ff; }   /* Website Hosting */
 .red { background: #ff3b3b; }    /* App Hosting */
 .white { background: #ffffff; }  /* AI / GPU Services */
 .green { background: #2ecc71; }  /* Database Hosting */
 .yellow { background: #f1c40f; } /* Cloud Infrastructure */
-.purple { background: #9b59b6; } /* DevOps / Computing */
+.purple { background: #9b59b6; } /* DevOps & Computing */
 .orange { background: #e67e22; } /* Disaster Recovery */
-/* MAIN WRAPPER (no heavy box) */
-.review-box {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 100px 20px;
-  font-family: sans-serif;
-  color: #111827;
-  background: #ffffff;
-}
-
 /* TITLE */
 .review-box .title {
   font-size: 2.2rem;
