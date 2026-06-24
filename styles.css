@@ -787,7 +787,7 @@ header {
 /*  DATA CENTER LAYOUT SECTION*/
 
 #data-center-layout {
-  background: #000; /* full black theme */
+background: white;
   color: #fff; /* main text color */
   padding: 60px 20px; /* section spacing */
   max-width: 900px; /* readable width */
