@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Speeds up font loading --><!-- Google Fonts connection optimization -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Improves font performance -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Loads Font Awesome icon library so the website can display payment icons like Visa, Mastercard, Amex, Discover, PayPal, Apple Pay, and Google Pay -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&display=swap" rel="stylesheet"><!-- Loads DM Sans font from Google Fonts -->
 <link rel="stylesheet" href="styles.css"><!-- Main stylesheet -->
 <script>
@@ -399,13 +400,22 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
       <button id="formButton" "type="submit">Request Consultation</button>
 
     </form> 
-    <p class="payment-text">
-  💳 Preferred Payment Methods:
-  Credit Cards • Debit Cards • Visa • Mastercard • American Express • Discover
-🅿️ PayPal • Apple Pay • Google Pay • 💵 Cash • 🏦 Bank Transfer • 💰 Money Orders<br>
-Refund policies apply. Fraudulent activity, unauthorized payments, and abuse of services are strictly prohibited.
-</p>
+ <p class="payment-text">
+  <strong>Accepted Payment Methods:</strong><br>
 
+  <i class="fa-brands fa-cc-visa"></i>
+  <i class="fa-brands fa-cc-mastercard"></i>
+  <i class="fa-brands fa-cc-amex"></i>
+  <i class="fa-brands fa-cc-discover"></i>
+  <i class="fa-brands fa-paypal"></i>
+  <i class="fa-brands fa-apple-pay"></i>
+  <i class="fa-brands fa-google-pay"></i>
+
+  <br>
+  Debit cards, credit cards, digital wallets, bank transfers, and other supported payment methods accepted.
+  <br>
+  Refund policies apply. Fraudulent activity, unauthorized payments, and abuse of services are strictly prohibited.
+</p>
   <br>
    
   </div>
