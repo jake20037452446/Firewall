@@ -783,97 +783,122 @@ header {
     font-size: 1.1rem;
   }
 }
+/* ================================
+   DATA CENTER RACK SYSTEM
+   White enterprise style layout
+================================ */
 
-/* DATA CENTER LAYOUT*/
+#rack-system {
+  background: #ffffff; /* Main white section background */
+  color: #000000; /* Main black text color */
+  padding: 60px 20px; /* Space inside section */
+  max-width: 900px; /* Limits section width */
+  margin: auto; /* Centers section */
+  font-family: Arial, sans-serif; /* Clean professional font */
 
-#data-center-layout {
-  background: #ffffff; /* white background */
-  color: #000000; /* black text */
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  font-family: Arial, sans-serif;
 }
 
 
-/* title */
-#data-center-layout h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+/* Section heading */
+#rack-system h2 {
+  font-size: 32px; /* Size of title */
+  margin-bottom: 10px; /* Space below title */
 }
 
 
-/* description */
-.subtitle {
-  color: #555;
-  margin-bottom: 30px;
-  line-height: 1.5;
+
+/* Description text */
+.rack-subtitle {
+  color: #555; /* Gray secondary text */
+  margin-bottom: 30px; /* Space before rack list */
+  line-height: 1.5; /* Improves readability */
 }
 
 
-/* service list */
-.layout-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+
+/* Container holding all rack rows */
+.rack-list {
+  display: flex; /* Enables flexible layout */
+  flex-direction: column; /* Stacks rows vertically */
+  gap: 15px; /* Space between each rack */
 }
 
 
-/* service boxes */
-.row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
 
-  background: #ffffff;
-  border: 1px solid #dddddd;
-
-  padding: 16px;
-  border-radius: 10px;
-
-  font-size: 18px;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* Individual rack service box */
+.rack-row {
+  display: flex; /* Places LED and text side-by-side */
+  align-items: center; /* Centers items vertically */
+  gap: 15px; /* Space between LED and name */
+  background: #ffffff; /* White card background */
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 16px; /* Inside spacing */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Service text size */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Soft card shadow */
 }
 
 
-/* LED lights */
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
+
+/* LED light base style */
+.rack-dot {
+  width: 12px; /* LED width */
+  height: 12px; /* LED height */
+  border-radius: 50%; /* Makes LED circular */
+  display: inline-block; /* Allows size control */
 }
 
 
-/* Rack colors */
 
-.blue {
-  background: #1e90ff; /* Website Hosting */
+/*  RACK LED COLOR SYSTEM */
+
+
+/* Blue LED = Website Hosting */
+.rack-blue {
+  background: #1e90ff;
 }
 
-.red {
-  background: #ff3b3b; /* App Hosting */
+
+
+/* Red LED = App Hosting */
+.rack-red {
+ background: #ff3b3b;
+ 
 }
 
-.white {
-  background: #000000; /* AI / GPU (black LED on white theme) */
+
+
+/* White LED = AI / GPU Services */
+.rack-white {
+  background: #000000; /* Black dot so it shows on white background */
 }
 
-.green {
-  background: #2ecc71; /* Database */
+
+
+/* Green LED = Database Hosting */
+.rack-green {
+  background: #2ecc71;
 }
 
-.yellow {
-  background: #f1c40f; /* Cloud */
+
+
+/* Yellow LED = Cloud Infrastructure */
+.rack-yellow {
+  background: #f1c40f;
 }
 
-.purple {
-  background: #9b59b6; /* DevOps */
+
+
+/* Purple LED = DevOps & Computing */
+.rack-purple {
+  background: #9b59b6;
 }
 
-.orange {
-  background: #e67e22; /* Disaster Recovery */
+
+
+/* Orange LED = Disaster Recovery */
+.rack-orange {
+  background: #e67e22;
 }
 /* TOP RATING SECTION */
 .rating {
