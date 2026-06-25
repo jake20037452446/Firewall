@@ -969,7 +969,11 @@ header {
   background: #ffffff;
   color: #111827;
 }
-
+.review-box {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
 #userName:focus,
 #userReview:focus {
   outline: none;
