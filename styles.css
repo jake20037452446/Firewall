@@ -1147,7 +1147,45 @@ label[for="userReview"] {
   font-size: 0.9rem;
   color: #6b7280;
 }
+.email-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0a0a0a; /* dark tech panel */
+  border: 1px solid #222;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
+/* glowing title */
+.glow-title {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* email link styling */
+.email-link {
+  display: inline-block;
+  font-size: 18px;
+  color: #1e90ff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #1e90ff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* hover effect */
+.email-link:hover {
+  background: #1e90ff;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(30,144,255,0.6);
+  transform: translateY(-2px);
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
   #about {
