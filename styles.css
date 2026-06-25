@@ -1072,11 +1072,6 @@ label[for="userReview"] {
   transition: 0.2s ease;
 }
 
-/* HOVER EFFECT (subtle professional feel) */
-#policy p:hover {
-  color: #e5e7eb;
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
   #policy h2 {
@@ -1101,6 +1096,8 @@ label[for="userReview"] {
     padding: 60px 15px;
   }
 }
+
+/*about section  */
 #about {
   padding: 100px 20px;
   background: #ffffff;
