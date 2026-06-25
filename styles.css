@@ -784,7 +784,97 @@ header {
   }
 }
 
+/* DATA CENTER LAYOUT*/
 
+#data-center-layout {
+  background: #ffffff; /* white background */
+  color: #000000; /* black text */
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+
+/* title */
+#data-center-layout h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+
+/* description */
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+
+/* service list */
+.layout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* service boxes */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: #ffffff;
+  border: 1px solid #dddddd;
+
+  padding: 16px;
+  border-radius: 10px;
+
+  font-size: 18px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* LED lights */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+/* Rack colors */
+
+.blue {
+  background: #1e90ff; /* Website Hosting */
+}
+
+.red {
+  background: #ff3b3b; /* App Hosting */
+}
+
+.white {
+  background: #000000; /* AI / GPU (black LED on white theme) */
+}
+
+.green {
+  background: #2ecc71; /* Database */
+}
+
+.yellow {
+  background: #f1c40f; /* Cloud */
+}
+
+.purple {
+  background: #9b59b6; /* DevOps */
+}
+
+.orange {
+  background: #e67e22; /* Disaster Recovery */
+}
 /* TOP RATING SECTION */
 .rating {
   display: flex;
