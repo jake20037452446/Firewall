@@ -233,15 +233,15 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
     Resources such as CPU, RAM, storage, and bandwidth are allocated with initial security configurations applied.
   </td>
 </tr>
-
+<!--Needs to be updated when security is added-->
 <tr>
   <td>4</td>
   <td>Security Setup</td>
   <td>
-    Firewall rules, access controls, and system settings are configured to prepare your VPS environment for deployment.
+    Firewall rules, access controls, system hardening, and security baseline configurations are applied to prepare your VPS environment for deployment. Intrusion prevention and secure access (SSH/API) settings are also configured.
   </td>
 </tr>
-
+  
 <tr>
   <td>5</td>
   <td>Access Delivery</td>
@@ -460,25 +460,77 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
 
   </div>
 
-  <!-- SECURITY SECTION -->
-  <div class="sectionNote">
+<!-- SECURITY SECTION -->
+<div class="sectionNote">
 
-    <h3>Security Infrastructure</h3>
+  <h3>Security Infrastructure</h3>
 
-    <p>
-      Our data center security systems are designed to protect both physical infrastructure and digital workloads.
-      We use layered security controls to ensure only authorized access to servers, network systems, and client environments.
-    </p>
+  <p>
+    Our data center security architecture is built on a multi-layer defense model that protects physical infrastructure, network traffic, and client workloads through redundancy, monitoring, and strict access control policies.
+  </p>
 
-    <p>
-      Physical security includes restricted access zones, monitored entry points, and controlled rack environments.
-      Digital security includes firewall protection, intrusion detection systems, and continuous threat monitoring across all network traffic.
-      We have 24-hour surveillance.
-    </p>
+  <h4>Physical Security Layer</h4>
+  <ul>
+    <li>Restricted access zones with tiered entry permissions</li>
+    <li>24/7 monitored facility surveillance (CCTV coverage)</li>
+    <li>Biometric or badge-based entry control systems</li>
+    <li>Locked and secured server rack enclosures</li>
+    <li>Visitor logging and access authorization tracking</li>
+    <li>Environmental monitoring (temperature, humidity, smoke detection)</li>
+  </ul>
 
-  </div>
+  <h4>Network Security Layer</h4>
+  <ul>
+    <li>Enterprise-grade firewall protection (stateful filtering)</li>
+    <li>DDoS mitigation and traffic filtering systems</li>
+    <li>Intrusion Detection System (IDS)</li>
+    <li>Intrusion Prevention System (IPS)</li>
+    <li>Network segmentation (VLAN-based isolation)</li>
+    <li>Secure routing and traffic inspection</li>
+  </ul>
 
-</section>
+  <h4>System & VPS Security Layer</h4>
+  <ul>
+    <li>OS-level hardening for all VPS environments</li>
+    <li>SSH key-based authentication (password restrictions enforced)</li>
+    <li>Role-based access control (RBAC)</li>
+    <li>Container isolation for hosted applications</li>
+    <li>Automatic security patch management</li>
+    <li>Secure API authentication tokens</li>
+  </ul>
+
+  <h4>Data Protection Layer</h4>
+  <ul>
+    <li>Encrypted data at rest (AES-256 encryption)</li>
+    <li>TLS 1.2/1.3 encryption for data in transit</li>
+    <li>Automated backup systems with snapshot recovery</li>
+    <li>Redundant storage systems (RAID configurations)</li>
+    <li>Data redundancy across multiple storage nodes</li>
+  </ul>
+
+  <h4>Monitoring & Threat Detection</h4>
+  <ul>
+    <li>24/7 infrastructure monitoring and alerting</li>
+    <li>Real-time traffic analysis and anomaly detection</li>
+    <li>Log aggregation and security event tracking (SIEM-style logging)</li>
+    <li>Automated incident response triggers</li>
+    <li>Uptime and performance monitoring dashboards</li>
+  </ul>
+
+  <h4>Access Control & Administration</h4>
+  <ul>
+    <li>Multi-factor authentication (MFA) for all admin access</li>
+    <li>Least-privilege access model (zero unnecessary permissions)</li>
+    <li>Session logging and administrative audit trails</li>
+    <li>Secure API gateway access management</li>
+    <li>Time-based and IP-restricted administrative access</li>
+  </ul>
+
+  <p>
+    This layered architecture ensures maximum protection across all infrastructure levels, from physical hardware to virtual VPS environments and client applications.
+  </p>
+
+</div>
 <!-- MAIN WRAPPER -->
 <section class="contentSplit">
 
