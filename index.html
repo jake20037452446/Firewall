@@ -336,19 +336,20 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
         <select autocomplete="off" name="service" id="service" required>
           <option value="">Select a Service</option>
 
-          <optgroup label="App Hosting">
-            <option value="app-hosting">App Hosting (Node.js / Python / PHP / Java / .NET)</option>
-            <option value="api-hosting">API Hosting</option>
-            <option value="microservices">Microservices Architecture</option>
-            <option value="containers">Containers (Docker / Kubernetes)</option>
+          <optgroup label="App Hosting (VPS-Based)">
+            <option value="app-hosting">App Hosting (VPS / Node.js / Python / PHP / Java / .NET)</option>
+            <option value="api-hosting">API Hosting (VPS / Backend Services)</option>
+            <option value="microservices">Microservices Architecture (VPS / Distributed Systems)</option>
+            <option value="containers">Containers (VPS / Docker / Kubernetes)</option>
           </optgroup>
 
-<optgroup label="Website Hosting">
-  <option value="web-hosting">Website Hosting (Shared / VPS / Dedicated)</option>
-  <option value="wordpress">WordPress Hosting</option>
-  <option value="ecommerce">E-commerce Hosting</option>
-  <option value="static-sites">Static Websites</option>
-</optgroup>
+          <optgroup label="Website Hosting (VPS-Based)">
+            <option value="web-hosting">Website Hosting (Shared / VPS / Dedicated)</option>
+            <option value="wordpress">WordPress Hosting (VPS Optimized)</option>
+            <option value="ecommerce">E-commerce Hosting (VPS Ready)</option>
+            <option value="static-sites">Static Websites (VPS / CDN Enabled)</option>
+          </optgroup>
+
 <!--
 <optgroup label="Cloud">
   <option value="private-cloud">Private Cloud</option>
@@ -382,7 +383,6 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
 </optgroup>
 -->
 
-
       <!-- MESSAGE -->
       <div class="inputBox">
         <label for="message">Project Details</label>
@@ -395,30 +395,29 @@ if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
       <input type="hidden" name="_template" value="table">
 
       <!-- SUBMIT -->
-      <button id="formButton" "type="submit">Request Consultation</button>
+      <button id="formButton" type="submit">Request Consultation</button>
 
     </form> 
 
     <p class="payment-text">
-  <strong>Accepted Payment Methods:</strong><br>
+      <strong>Accepted Payment Methods:</strong><br>
 
-  <i class="fa-brands fa-cc-visa"></i>
-  <i class="fa-brands fa-cc-mastercard"></i>
-  <i class="fa-brands fa-cc-amex"></i>
-  <i class="fa-brands fa-cc-discover"></i>
-  <i class="fa-brands fa-paypal"></i>
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-amex"></i>
+      <i class="fa-brands fa-cc-discover"></i>
+      <i class="fa-brands fa-paypal"></i>
 
-  <!-- Safe generic payment icons -->
-  <i class="fa-solid fa-credit-card"></i>
-  <i class="fa-solid fa-wallet"></i>
-  <i class="fa-solid fa-building-columns"></i>
+      <i class="fa-solid fa-credit-card"></i>
+      <i class="fa-solid fa-wallet"></i>
+      <i class="fa-solid fa-building-columns"></i>
 
-  <br><br>
+      <br><br>
 
-  Debit cards, credit cards, digital wallets, bank transfers, and other supported payment methods accepted.<br>
+      Debit cards, credit cards, digital wallets, bank transfers, and other supported payment methods accepted.<br>
 
-  Refund policies apply. Fraudulent activity, unauthorized payments, and abuse of services are strictly prohibited.
-</p>      
+      Refund policies apply. Fraudulent activity, unauthorized payments, and abuse of services are strictly prohibited.
+    </p>      
    
   </div>
 </section>
