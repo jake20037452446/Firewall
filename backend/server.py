@@ -1,150 +1,164 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+from flask_jwt_extended import (
+    JWTManager,
+    create_access_token,
+    jwt_required,
+    get_jwt_identity
+)
+import bcrypt
+import datetime
 
 from models import (
     get_users,
     get_user_by_id,
     add_user,
-    update_user,
-    delete_user,
     get_user_by_email
 )
 
-from utils.validators import is_valid_email
-
-# 👇 ADD THIS (Blueprint import)
-from routes.users import users_bp
-
 app = Flask(__name__)
-CORS(app)
 
-# =========================
-# REGISTER BLUEPRINT (ADDED)
-# =========================
-app.register_blueprint(users_bp)
+# 
+#  CORE SECURITY CONFIG
+#
 
-# 🟢 Home route
+app.config["JWT_SECRET_KEY"] = "CHANGE_THIS_TO_A_STRONG_SECRET_KEY"
+jwt = JWTManager(app)
+
+# Rate limiting (anti spam)
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["60 per minute"]
+)
+
+# Locked CORS (CHANGE THIS in production)
+CORS(app, origins=["http://localhost:3000"])
+
+# 
+#  SIMPLE AUDIT LOG
+# 
+def log_event(event):
+    print(f"[AUDIT] {datetime.datetime.now()} - {event}")
+
+
+# 
+#  HOME
+# 
 @app.route("/")
 def home():
-    return jsonify({"message": "Server is running"})
+    return jsonify({"message": "Secure server running"})
 
 
-# 🟢 Get all users
-@app.route("/users", methods=["GET"])
-def users():
-    try:
-        users = get_users()
+# 
+#  REGISTER (bcrypt)
+# 
+@app.route("/register", methods=["POST"])
+@limiter.limit("10 per minute")
+def register():
+    data = request.get_json()
 
-        return jsonify([
-            {"id": u["id"], "name": u["name"], "email": u["email"]}
-            for u in users
-        ])
-    except Exception as e:
-        return jsonify({"error": "Failed to fetch users"}), 500
+    name = data.get("name", "").strip()
+    email = data.get("email", "").strip().lower()
+    password = data.get("password", "")
+
+    if not name or not email or not password:
+        return jsonify({"error": "Missing fields"}), 400
+
+    if get_user_by_email(email):
+        return jsonify({"error": "User already exists"}), 409
+
+    # bcrypt hashing (REAL security)
+    hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
+    add_user(name, email, hashed_pw)
+
+    log_event(f"User registered: {email}")
+
+    return jsonify({"message": "User created"}), 201
 
 
-# 🟢 Get user by ID
-@app.route("/users/<int:user_id>", methods=["GET"])
-def user_detail(user_id):
+# 
+# LOGIN (JWT TOKEN)
+# 
+@app.route("/login", methods=["POST"])
+@limiter.limit("10 per minute")
+def login():
+    data = request.get_json()
 
-    try:
-        user = get_user_by_id(user_id)
+    email = data.get("email", "").strip().lower()
+    password = data.get("password", "")
 
-        if user is None:
-            return jsonify({"error": "User not found"}), 404
+    user = get_user_by_email(email)
 
-        return jsonify({
+    if not user:
+        return jsonify({"error": "Invalid credentials"}), 401
+
+    if not bcrypt.checkpw(password.encode(), user["password"].encode()):
+        return jsonify({"error": "Invalid credentials"}), 401
+
+    # create token
+    token = create_access_token(
+        identity={
             "id": user["id"],
-            "name": user["name"],
             "email": user["email"]
-        })
+        }
+    )
 
-    except Exception:
-        return jsonify({"error": "Server error"}), 500
+    log_event(f"Login success: {email}")
 
-
-# 🟢 Create user (POST)
-@app.route("/users", methods=["POST"])
-def create_user():
-    try:
-        data = request.get_json()
-
-        if not data:
-            return jsonify({"error": "JSON data required"}), 400
-
-        name = data.get("name", "").strip()
-        email = data.get("email", "").strip().lower()
-
-        if not name or not email:
-            return jsonify({"error": "Name and email required"}), 400
-
-        if not is_valid_email(email):
-            return jsonify({"error": "Invalid email format"}), 400
-
-        existing_user = get_user_by_email(email)
-        if existing_user:
-            return jsonify({"error": "Email already exists"}), 400
-
-        add_user(name, email)
-
-        return jsonify({"message": "User created successfully"}), 201
-
-    except Exception:
-        return jsonify({"error": "Failed to create user"}), 500
+    return jsonify({"token": token})
 
 
-# 🟢 Update user (PUT)
-@app.route("/users/<int:user_id>", methods=["PUT"])
-def update_user_route(user_id):
-
-    try:
-        user = get_user_by_id(user_id)
-        if user is None:
-            return jsonify({"error": "User not found"}), 404
-
-        data = request.get_json()
-
-        if not data:
-            return jsonify({"error": "JSON data required"}), 400
-
-        name = data.get("name", "").strip()
-        email = data.get("email", "").strip().lower()
-
-        if not name or not email:
-            return jsonify({"error": "Name and email required"}), 400
-
-        if not is_valid_email(email):
-            return jsonify({"error": "Invalid email format"}), 400
-
-        existing_user = get_user_by_email(email)
-        if existing_user and existing_user["id"] != user_id:
-            return jsonify({"error": "Email already exists"}), 400
-
-        update_user(user_id, name, email)
-
-        return jsonify({"message": "User updated successfully"})
-
-    except Exception:
-        return jsonify({"error": "Failed to update user"}), 500
+# 
+#  PROTECTED ROUTE
+#
+@app.route("/me", methods=["GET"])
+@jwt_required()
+def me():
+    user = get_jwt_identity()
+    return jsonify(user)
 
 
-# 🟢 Delete user (DELETE)
-@app.route("/users/<int:user_id>", methods=["DELETE"])
-def delete_user_route(user_id):
+# 
+#  GET USERS (PROTECTED)
+#
+@app.route("/users", methods=["GET"])
+@jwt_required()
+def users():
+    all_users = get_users()
 
-    try:
-        user = get_user_by_id(user_id)
-
-        if user is None:
-            return jsonify({"error": "User not found"}), 404
-
-        delete_user(user_id)
-
-        return jsonify({"message": "User deleted successfully"})
-
-    except Exception:
-        return jsonify({"error": "Failed to delete user"}), 500
+    return jsonify([
+        {
+            "id": u["id"],
+            "name": u["name"],
+            "email": u["email"]
+        }
+        for u in all_users
+    ])
 
 
+# 
+#  GET USER BY ID (PROTECTED)
+@app.route("/users/<int:user_id>", methods=["GET"])
+@jwt_required()
+def user_detail(user_id):
+    user = get_user_by_id(user_id)
+
+    if not user:
+        return jsonify({"error": "Not found"}), 404
+
+    return jsonify({
+        "id": user["id"],
+        "name": user["name"],
+        "email": user["email"]
+    })
+
+
+# 
+# RUN SERVER
+# 
 if __name__ == "__main__":
     app.run(debug=True)
